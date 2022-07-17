@@ -1,3 +1,3 @@
-INSERT INTO users (id,name) VALUES (1,"Santiago");
-INSERT INTO users (id,name) VALUES (2,"David");
-INSERT INTO users (id,name) VALUES (3,"Natalya");
+INSERT INTO users (id,name,lastname) VALUES (4,'Santiago','Quiceno');
+INSERT INTO users (id,name,lastname) VALUES (5,'David','Lopez');
+INSERT INTO users (id,name,lastname) VALUES (6,'Natalya','Urrea');

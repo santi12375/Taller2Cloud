@@ -1,13 +1,15 @@
 package co.com.taller2.userservice.persistence.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Objects;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
@@ -22,6 +24,12 @@ public class User {
 
     @Column(name = "lastname")
     private String lastname;
+
+    /*
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "booking_id")
+    private Booking booking;
+       */
 
     @Override
     public boolean equals(Object o) {
