@@ -3,6 +3,7 @@ package co.com.taller2.userservice.persistence.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Objects;
 
 @Getter
@@ -19,9 +20,11 @@ public class User {
     @Column(name = "id", updatable = false,nullable = false,unique = true)
     private Long id;
 
+    @NotBlank(message = "You must fill this field")
     @Column(name = "name")
     private String name;
 
+    @NotBlank(message = "You must fill this field")
     @Column(name = "lastname")
     private String lastname;
 
