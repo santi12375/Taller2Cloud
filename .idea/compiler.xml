@@ -10,6 +10,7 @@
         <module name="Taller2Cloud.booking-service.main" />
         <module name="Taller2Cloud.config-service.main" />
         <module name="Taller2Cloud.eureka-service.main" />
+        <module name="Taller2Cloud.admin-service.main" />
         <module name="Taller2Cloud.gateway-service.main" />
         <module name="Taller2Cloud.movie-service.main" />
         <module name="Taller2Cloud.showtime-service.main" />
