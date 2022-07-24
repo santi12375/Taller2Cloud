@@ -12,6 +12,7 @@
         <module name="Taller2.booking-service.main" />
         <module name="Taller2.config-service.main" />
         <module name="Taller2.movie-service.main" />
+        <module name="Taller2.showTime-service.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11" />
