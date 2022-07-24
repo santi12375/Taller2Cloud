@@ -1,7 +1,9 @@
-rootProject.name = 'Taller2'
+rootProject.name = 'Taller2Cloud'
 
 include 'user-service'
 include 'config-service'
 include 'eureka-service'
 include 'movie-service'
 include 'booking-service'
+include 'showtime-service'
+include 'gateway-service'

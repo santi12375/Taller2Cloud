@@ -13,8 +13,6 @@ public interface BookingRepository extends JpaRepository<Booking,Long> {
     @Override
     List<Booking> findAll();
 
-    List<Booking> createBooking();
-
     List<Booking> findBookingById(Long id);
 
     List<Booking> findBookingByUserId(Long id);
