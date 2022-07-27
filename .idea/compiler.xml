@@ -9,6 +9,7 @@
         </processorPath>
         <module name="Taller2.user-service.main" />
         <module name="Taller2.eureka-service.main" />
+        <module name="Taller2.admin-service.main" />
         <module name="Taller2.booking-service.main" />
         <module name="Taller2.config-service.main" />
         <module name="Taller2.movie-service.main" />
