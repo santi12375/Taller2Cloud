@@ -1,4 +1,4 @@
-package co.com.taller2.bookingservice;
+package co.com.taller2.showtimeservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class BookingServiceApplication {
+public class ShowtimeServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BookingServiceApplication.class, args);
+        SpringApplication.run(ShowtimeServiceApplication.class, args);
     }
 
 }
