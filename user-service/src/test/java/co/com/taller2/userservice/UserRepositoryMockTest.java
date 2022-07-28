@@ -1,7 +1,7 @@
 package co.com.taller2.userservice;
 
 import co.com.taller2.userservice.persistence.entity.User;
-import co.com.taller2.userservice.repository.UserRepository;
+import co.com.taller2.userservice.persistence.repository.UserRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

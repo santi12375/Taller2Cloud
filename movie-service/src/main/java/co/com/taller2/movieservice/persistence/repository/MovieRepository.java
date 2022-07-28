@@ -9,10 +9,7 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie,Long> {
 
-    @Override
-    List<Movie> findAll();
+    Movie findMovieById(long id);
 
-    List<Movie> findMovieById(Long id);
-
-    void deleteMovieById(Long id);
+    void deleteMovieById(long id);
 }

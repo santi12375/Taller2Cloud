@@ -1,7 +1,7 @@
 package co.com.taller2.userservice.service;
 
 import co.com.taller2.userservice.persistence.entity.User;
-import co.com.taller2.userservice.repository.UserRepository;
+import co.com.taller2.userservice.persistence.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,8 +22,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void delete(User user) {
-
+    public void delete(long id) { userRepository.deleteUserById(id);
     }
 
     @Override

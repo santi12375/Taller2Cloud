@@ -37,12 +37,11 @@ public class UserController {
     @DeleteMapping("/{id}")
     public Response delete(@PathVariable("id") Long id){
         try {
-            User user = userService.findById(id);
-            userService.delete(user);
-            return builder.success(user);
+            userService.delete(id);
         }catch (Exception e){
-            return builder.badRequest();
+            return builder.noFound();
         }
+        return builder.deleteSuccess();
     }
 
     @GetMapping

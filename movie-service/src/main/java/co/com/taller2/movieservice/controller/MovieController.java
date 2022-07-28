@@ -22,7 +22,7 @@ public class MovieController {
     private final FormatParser formatParser;
 
     @PostMapping
-    public Response save(@Valid @RequestBody Movie movie , BindingResult result){
+    public Response save(@Valid @RequestBody Movie movie, BindingResult result){
         if (result.hasErrors()) {
             return builder.failed(formatParser.formatMessage(result));
         }
@@ -34,28 +34,23 @@ public class MovieController {
         return builder.success(movie);
     }
 
-    @GetMapping
-    public Response findAll(){
-        return builder.getSuccess(movieService.findAll());
-    }
-
-    @GetMapping("/{id}")
-    public List<Movie> findMovieById(@PathVariable("id") Long id){
-        return this.movieService.findMovieById(id);
-    }
-
     @DeleteMapping("/{id}")
-    public Response deleteMovieById(@PathVariable("id") Long id){
-
-        if(movieService.findMovieById(id).isEmpty()){
-            return builder.noFound();
-        } //else donde si lo encuentra se fije en bookings aver si no hay reservas asociadas a el id de dicha pelicula
-
+    public Response delete(@PathVariable("id") Long id){
         try {
-            this.movieService.delete(id);
-            return builder.deleteSuccess();
+            movieService.delete(id);
         }catch (Exception e){
             return builder.noFound();
         }
+        return builder.deleteSuccess();
+    }
+
+    @GetMapping
+    public List<Movie> findAll(){
+        return movieService.findAllMovies();
+    }
+
+    @GetMapping("/{id}")
+    public Movie findById(@PathVariable("id") Long id) {
+        return movieService.findMovieById(id);
     }
 }

@@ -7,7 +7,7 @@ import static org.springframework.http.HttpStatus.*;
 @Component
 public class ResponseBuild {
 
-    public Response logicalDeleteSuccess(){
+    public Response deleteSuccess(){
         return Response.builder()
                 .code(OK.toString()).build();
     }
@@ -42,7 +42,7 @@ public class ResponseBuild {
 
     public Response uniqueRestriction(){
         return  Response.builder()
-                .code(FOUND.toString()+ " One project must have only one backlog").build();
+                .code(FOUND.toString()+ " Must have only one").build();
     }
 
     public Response doubleValue(Double value){

@@ -8,9 +8,9 @@ public interface MovieService {
 
     void save(Movie movie);
 
-    List<Movie> findAll();
+    void delete(long id);
 
-    List<Movie> findMovieById(Long id);
+    List<Movie> findAllMovies();
 
-    void delete(Long id);
+    Movie findMovieById(long id);
 }
