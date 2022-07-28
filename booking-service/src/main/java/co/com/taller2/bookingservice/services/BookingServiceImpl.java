@@ -5,6 +5,7 @@ import co.com.taller2.bookingservice.persistence.entity.Booking;
 import co.com.taller2.bookingservice.persistence.repository.BookingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -12,31 +13,35 @@ import java.util.List;
 @RequiredArgsConstructor
 public class BookingServiceImpl implements BookingService{
 
-    BookingRepository bookingRepository;
-
+    private final BookingRepository bookingRepository;
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void save(Booking booking) {
         bookingRepository.save(booking);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Booking> findAll() {
        return bookingRepository.findAll();
     }
 
     @Override
-    public List<Booking> findBookingByUserId(Long userId) {
+    @Transactional(readOnly = true)
+    public Booking findBookingByUserId(Long userId) {
         return bookingRepository.findBookingByUserId(userId);
     }
 
     @Override
-    public List<Booking> findBookingById(Long id) {
+    @Transactional(readOnly = true)
+    public Booking findBookingById(Long id) {
         return bookingRepository.findBookingById(id);
     }
 
     @Override
-    public void delete(Long id) {
+    @Transactional(rollbackFor = Exception.class)
+    public void delete(long id) {
     bookingRepository.deleteBookingById(id);
     }
 }

@@ -1,5 +1,6 @@
 package co.com.taller2.userservice.persistence.entity;
 
+import co.com.taller2.userservice.commons.EntityBase;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,8 +13,8 @@ import java.util.Objects;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "user")
+public class User extends EntityBase {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
@@ -33,19 +34,6 @@ public class User {
     @JoinColumn(name = "booking_id")
     private Booking booking;
        */
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
 
     @Override
     public String toString() {

@@ -1,11 +1,13 @@
 package co.com.taller2.movieservice.persistence.entity;
 
+import co.com.taller2.movieservice.commons.EntityBase;
 import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 @Entity
@@ -15,7 +17,7 @@ import java.util.Objects;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Movie {
+public class Movie extends EntityBase {
 
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
@@ -30,24 +32,11 @@ public class Movie {
     @Column(name = "director")
     private String director;
 
-    @Min(1)
-    @Max(5)
-    @NotBlank(message = "You must fill this field")
+    @Min(value = 1,message = "The rating must be between 1 and 5")
+    @Max(value = 5,message = "The rating must be between 1 and 5")
+    @NotNull(message = "You must fill this field")
     @Column(name = "rating")
-    private String rating;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Movie movie = (Movie) o;
-        return Objects.equals(id, movie.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+    private int rating;
 
     @Override
     public String toString() {

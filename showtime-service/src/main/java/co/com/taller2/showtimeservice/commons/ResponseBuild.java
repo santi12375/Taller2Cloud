@@ -51,4 +51,9 @@ public class ResponseBuild {
                 .data(value.toString()).build();
     }
 
+    public Response badDateFormat(){
+        return Response.builder()
+                .code(FOUND.toString()+ " Date must be on format yyyy-MM-dd").build();
+    }
+
 }

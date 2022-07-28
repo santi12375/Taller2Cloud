@@ -14,7 +14,6 @@ public class ShowTimeServiceImpl implements ShowTimeService{
 
     ShowTimeRepository showTimeRepository;
 
-
     @Override
     public void save(ShowTime showTime) {
         showTimeRepository.save(showTime);

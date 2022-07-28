@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/booking")
+@RequestMapping("/bookings")
 @RequiredArgsConstructor
 public class BookingController {
 
@@ -41,21 +41,17 @@ public class BookingController {
     }
 
     @GetMapping("/{id}")
-    public List<Booking> findBookingById(@PathVariable("id") Long id){
+    public Booking findBookingById(@PathVariable("id") Long id){
         return this.bookingService.findBookingById(id);
     }
 
     @GetMapping("/{userId}")
-    public List<Booking> findBookingByUserId(@PathVariable("userId") Long userId){
+    public Booking findBookingByUserId(@PathVariable("userId") Long userId){
         return this.bookingService.findBookingByUserId(userId);
     }
 
     @DeleteMapping("/{id}")
     public Response deleteBookingById(@PathVariable("id") Long id){
-
-        if(bookingService.findBookingById(id).isEmpty()){
-            return builder.noFound();
-        }
 
         try {
             this.bookingService.delete(id);
