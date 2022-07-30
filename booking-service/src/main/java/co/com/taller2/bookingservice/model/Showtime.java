@@ -9,5 +9,5 @@ public class Showtime{
 
     private Long id;
     private Date date;
-
+    private Movie movie;
 }

@@ -1,9 +1,9 @@
 package co.com.taller2.showtimeservice.persistence.entity;
 
 import co.com.taller2.showtimeservice.commons.EntityBase;
+import co.com.taller2.showtimeservice.model.Movie;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -24,6 +24,10 @@ public class Showtime extends EntityBase {
     @JsonFormat(pattern="yyyy-MM-dd")
     @Column(name = "date")
     private Date date;
+
+
+    @Transient
+    private Movie movie;
 
     /*
     @JsonManagedReference
