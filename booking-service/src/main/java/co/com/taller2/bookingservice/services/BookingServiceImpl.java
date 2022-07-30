@@ -36,11 +36,11 @@ public class BookingServiceImpl implements BookingService{
     @Transactional(readOnly = true)
     public Booking findBookingByUserId(Long userId) {
 
-        /*
+
             Booking booking = bookingRepository.findBookingByUserId(userId);
             User user = userClient.findById(booking.getUserId());
             booking.setUser(user);
-        */
+
         return bookingRepository.findBookingByUserId(userId);
     }
 
