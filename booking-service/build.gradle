@@ -16,6 +16,10 @@ dependencies {
     //Dependencias para el cliente de admin y actuator
     implementation 'de.codecentric:spring-boot-admin-starter-client'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    //Dependencias para cliente feign y circuitbraker
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.5.RELEASE'
+    implementation 'org.modelmapper:modelmapper:3.1.0'
 }
 
 dependencyManagement {

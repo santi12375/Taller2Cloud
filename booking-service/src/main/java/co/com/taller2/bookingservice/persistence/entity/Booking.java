@@ -1,6 +1,7 @@
 package co.com.taller2.bookingservice.persistence.entity;
 
 import co.com.taller2.bookingservice.commons.EntityBase;
+import co.com.taller2.bookingservice.model.User;
 import lombok.*;
 
 import javax.persistence.*;
@@ -30,6 +31,20 @@ public class Booking extends EntityBase {
     @Column(name = "showTimeId")
     private Long showTimeId;
 
+    @Transient
+    private User user;
+
     //Lista de Movies (feign)
 
+    /*
+
+    @JsonBackReference
+    @OneToOne(fetch = FetchType.EAGER)
+    private Showtime showtime;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "booking",fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    private List<Movie> movies;
+
+     */
 }

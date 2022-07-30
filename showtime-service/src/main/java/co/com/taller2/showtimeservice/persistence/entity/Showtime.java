@@ -25,6 +25,13 @@ public class Showtime extends EntityBase {
     @Column(name = "date")
     private Date date;
 
+    /*
+    @JsonManagedReference
+    @OneToMany(mappedBy = "showtime",fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    private List<Movie> movies;
+
+     */
+
     @Override
     public String toString() {
         return "Showtime{" +
